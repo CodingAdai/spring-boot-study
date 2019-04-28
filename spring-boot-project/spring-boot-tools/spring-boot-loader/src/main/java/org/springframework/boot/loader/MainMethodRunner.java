@@ -44,7 +44,9 @@ public class MainMethodRunner {
 	public void run() throws Exception {
 		Class<?> mainClass = Thread.currentThread().getContextClassLoader()
 				.loadClass(this.mainClassName);
+		// 获取main 方法
 		Method mainMethod = mainClass.getDeclaredMethod("main", String[].class);
+		// 反射调用
 		mainMethod.invoke(null, new Object[] { this.args });
 	}
 

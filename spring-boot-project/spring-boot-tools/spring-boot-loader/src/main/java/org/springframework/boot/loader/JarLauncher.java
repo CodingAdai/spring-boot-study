@@ -47,6 +47,7 @@ public class JarLauncher extends ExecutableArchiveLauncher {
 		return entry.getName().startsWith(BOOT_INF_LIB);
 	}
 
+	// Spring Boot 应用的入口
 	public static void main(String[] args) throws Exception {
 		new JarLauncher().launch(args);
 	}
